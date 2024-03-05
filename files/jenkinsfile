@@ -23,7 +23,7 @@ environment {
     stage('Test') 
     {
       agent {
-        lable 'slave2'
+        label'slave2'
       }
         steps {
             sh '''
