@@ -10,12 +10,13 @@ agent any
         }
 
         stage('Test') 
-        steps {
+        {
+            steps {
           sleep 10
+                  }
         }
-    }
+        }
 }
-
 
     
     
