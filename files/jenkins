@@ -2,17 +2,36 @@ pipeline {
     agent any
     
     stages {
-        stage ('Build') {
+        stage ('Build1') {
             steps {
-                sh 'ls -lrt'
+                sh 
+                '''#!/bin/bash
+                   pwd
+                   sleep 10
+                   ls -lrt'''
             }
         }
-        stage ('Test') {
+
+        stage ('Test1') {
             steps {
-                sh 'sleep 5'
+                sh 'sleep 10'
                 
             }
         }
-        
+
+      
+        stage ('Build2') {
+            steps {
+                sh 'ls -lrt'
+            }
+        } 
+
+           
+        stage ('Build3') {
+            steps {
+                sh 'sleep 5'
+            }
+        } 
     }
+
 }
