@@ -17,8 +17,7 @@ agent none
     stage('Test') 
     {
         agent {
-         label 'slave2'
-              }
+         label 'slave1'
 
         steps {
             sh '''
