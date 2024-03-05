@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage ('Build1') {
             steps {
-                sh 
-                '''#!/bin/bash
+                sh''' 
+                   #!/bin/bash
                    pwd
                    sleep 10
                    ls -lrt'''
