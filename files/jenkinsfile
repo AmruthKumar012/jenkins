@@ -16,6 +16,10 @@ agent none
 
     stage('Test') 
     {
+        agent {
+         label 'slave1'
+              }
+               
         steps {
             sh '''
             #!/bin/bash
