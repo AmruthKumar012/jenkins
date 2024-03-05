@@ -8,8 +8,8 @@ agent {
         label'slave2'
        
         steps {
-            sh '''
-            sleep 5'''
+           
+            sleep 5
                }
        }
 
