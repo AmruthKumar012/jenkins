@@ -1,21 +1,14 @@
 pipeline {
-agent none
-environment {
-    TEST="test_value"
-    BUILD_NAME = "test_value2"
-}
+agent any
 
    stages{
       stage('Build') 
       {
 
-        agent {
-         label 'slave1'
-              }
-
+       
         steps {
             sh '''
-            echo $TEST $BUILD_NAME
+            
             sleep 5'''
                }
        }
@@ -26,9 +19,7 @@ environment {
         label'slave2'
       }
         steps {
-          script {
-            echo "${env.TEST}"
-          }
+          sleep 10
         }
     }
 }
