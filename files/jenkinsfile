@@ -1,28 +1,21 @@
 pipeline {
-agent none
+agent any
 
    stages{
-      stage('Build') 
-      {
-       agent  {  
-         label 'slave2'
-       
-        steps {
-           
-            sleep 5
-               }
-       }
+        stage('Build') 
+        {
+         steps {
+             sleep 5
+                }
+        }
 
-    stage('Test') 
-    {
-      
-      }
+        stage('Test') 
         steps {
           sleep 10
         }
     }
 }
-}
+
 
     
     
