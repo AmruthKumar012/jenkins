@@ -5,10 +5,11 @@ agent any
     string(name: 'PARAM_STRING',defaultValue:'input_param',description: 'This is a string parameter' )
 
   }
-
-  triggers{
-    cron ('*/59 * * * *')
-  }
+triggers
+{
+    corn ('*/59 * * * *')
+}
+ 
    stages{
         stage('Build') 
         {
