@@ -16,8 +16,7 @@ agent none
 
     stage('Test') 
     {
-      
-
+      agent any
         steps {
             sh '''
             #!/bin/bash
