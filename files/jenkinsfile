@@ -4,7 +4,8 @@ agent none
    stages{
       stage('Build') 
       {
-
+agent {
+        label'slave2'
        
         steps {
             sh '''
@@ -15,8 +16,7 @@ agent none
 
     stage('Test') 
     {
-      agent {
-        label'slave2'
+      
       }
         steps {
           sleep 10
