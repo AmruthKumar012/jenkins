@@ -1,39 +1,21 @@
 pipeline {
-agent any
-
-  parameters {
-    string(name: 'PARAM_STRING',defaultValue:'input_param',description: 'This is a string parameter' )
-
+  agent any
+  stages {
+    stage('Parallel Stage') {
+      parallel {
+        stage('Job 1') {
+          steps {
+            sleep 10
+            echo 'Running Job 1'
+          }
+        }
+        stage('Job 2') {
+          steps {
+            sleep 5
+            echo 'Running Job 2'
+          }
+        }
+      }
+    }
   }
-triggers
-{
-    cron('*/59 * * * *')
 }
- 
-   stages{
-        stage('Build') 
-        {
-         steps {
-            sh'''
-            echo $PARAM_STRING
-             sleep 5
-             '''
-                }
-        }
-
-        stage('Test') 
-        {
-            steps {
-            script {
-                echo "${params.PARAM_STRING}"
-            }   
-         
-                  }
-        }
-        }
-}
-
-    
-    
-        
-    
